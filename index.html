@@ -11,14 +11,31 @@
     <title>Hilmi & Hafizzah</title>
 </head>
 
+<audio id="weddingSound" type="audio/mp3" src="./music/page.mp3" preload="auto"></audio>
+<script>
+function toggleOverlay() {
+  const overlay = document.getElementById('overlay');
+  const audio = document.getElementById('weddingSound');
+
+  if (overlay.style.display === 'none' || !overlay.style.display) {
+    overlay.style.display = 'flex';
+    audio.play();
+  } else {
+    overlay.style.display = 'none';
+    audio.pause();
+    audio.currentTime = 0; // Reset
+  }
+}
+</script>
+
 <body>
     <div class="wrapper">
         <div id="overlay" class="overlay">
             <div class="overlay-content">
-                <button id="toggle-content" class="toggle-button">
+                <button id="toggle-content" class="toggle-button" onclick="toggleOverlay()">
                     <p>Hilmi</p>
                     <p>Hafizzah</p>
-                    <p class="buka">Buka</p>
+                    <p class="buka">Open</p>
                 </button>
             </div>
         </div>
@@ -140,8 +157,10 @@
                 <div class="container">
                     <img src="./images/ucapan-bg.png" alt="">
                     <div class="content">
-                        <p>Ya Allah, berkatilah majlis perkahwinan ini, limpahkan baraqah dan rahmat kepada kedua
-                            mempelai ini,
+                        <b><p>Doa untuk Pengantin</p></b>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <p>Ya Allah, berkatilah majlis perkahwinan ini, limpahkan baraqah dan rahmat kepada Muhammad
+                            Hilmi dan Nur Hafizzah,
                             Kurniakanlah mereka
                             zuriat yang soleh dan solehah. Kekalkanlah jodoh mereka di dunia dan di akhirat dan
                             sempurnakanlah
@@ -150,65 +169,11 @@
                     </div>
                 </div>
             </div>
-            <img src="./images/divider.png" alt="" class="divider reveal fade-bottom">
-            <div class="rsvp">
-                <h2 class="reveal fade-bottom">Ucapan</h2>
-                <div class="container-message reveal fade-bottom">
+            <div class="ucapan reveal fade-bottom">
+                <div class="container">
+                    <img src="./images/qr.jpg" alt="">
                     <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
-                    </div>
-                    <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
-                    </div>
-                    <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
-                    </div>
-                    <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
-                    </div>
-                    <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
-                    </div>
-                    <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
-                    </div>
-                    <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
-                    </div>
-                    <div class="content">
-                        <p class="name">Anonymous</p>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor velit
-                            in tincidunt vehicula. Nam fermentum
-                            finibus
-                            purus, id vulputate nibh rhoncus vel.</p>
+                        
                     </div>
                 </div>
                 <div class="beri-ucapan-button reveal fade-bottom">
@@ -281,7 +246,7 @@
             <p>(Piano Cover by Riyandi Kusuma)</p>
             <audio id="audio-player" controls autoplay loop>
                 <source type="audio/mp3"
-                    src="./music/Beautiful in White x Canon in D (Piano Cover by Riyandi Kusuma).mp3">
+                    src="./music/Barbie2.mp3">
             </audio>
         </div>
     </div>
