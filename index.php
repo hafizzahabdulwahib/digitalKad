@@ -262,7 +262,7 @@ if (mysqli_num_rows($query2) == 0) {
             <ul class="menu">
                 <li id="calendar-btn"><i class='bx bx-calendar'></i></li>
                 <li id="location-btn"><i class='bx bx-map'></i></li>
-                <li id="music-btn"><i class='bx bx-music'></i></li>
+                <li id="music-btn"><i class='bx bx-dollar-circle'></i></li>
                 <li id="rsvp-btn"><i class='bx bx-envelope'></i></li>
                 <li id="contact-btn"><i class='bx bx-phone'></i></li>
             </ul>
