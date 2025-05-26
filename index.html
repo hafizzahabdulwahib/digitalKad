@@ -24,12 +24,6 @@ function toggleOverlay() {
 
     // Fade out overlay (optional)
     overlay.style.opacity = '0';
-
-    // Delay to allow fade animation (if any), then hide and scroll
-    setTimeout(() => {
-      overlay.style.display = 'none';
-      mainContent.scrollIntoView({ behavior: 'smooth' });
-    }, 500); // Wait for overlay to fade out (adjust time to match CSS)
   }
 }
 </script>
@@ -174,19 +168,17 @@ function toggleOverlay() {
             </div>
             <div class="qr reveal fade-bottom">
                 <div class="container">
-                    <p class="title">Salam Kaut</p>
+                    <div class="aturcara reveal fade-bottom">
+                    <p class="title">aturcara majlis</p>
+                    </div>
                     <img src="./images/qr.jpg" alt="">
-                </div>
+                    </div>
             </div>
              <div class="ucapan reveal fade-bottom">
                 <div class="beri-ucapan-button reveal fade-bottom">
                     <button id="kehadiran-btn">
-                        <i class='bx bxs-check-square'></i>
-                        <span>Sahkan Kehadiran</span>
                     </button>
                     <button id="ucapan-btn">
-                        <i class='bx bxs-pen'></i>
-                        <span>Berikan Ucapan</span>
                     </button>
                 </div>
             </div>
