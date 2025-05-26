@@ -16,17 +16,24 @@
 function toggleOverlay() {
   const overlay = document.getElementById('overlay');
   const audio = document.getElementById('weddingSound');
+  const mainContent = document.getElementById('mainContent');
 
-  if (overlay.style.display === 'none' || !overlay.style.display) {
-    overlay.style.display = 'flex';
+  // Only trigger on first click
+  if (overlay.style.display !== 'none') {
     audio.play();
-  } else {
-    overlay.style.display = 'none';
-    audio.pause();
-    audio.currentTime = 0; // Reset
+
+    // Fade out overlay (optional)
+    overlay.style.opacity = '0';
+
+    // Delay to allow fade animation (if any), then hide and scroll
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      mainContent.scrollIntoView({ behavior: 'smooth' });
+    }, 500); // Wait for overlay to fade out (adjust time to match CSS)
   }
 }
 </script>
+
 
 <body>
     <div class="wrapper">
@@ -40,6 +47,7 @@ function toggleOverlay() {
             </div>
         </div>
     </div>
+    <div id="mainContent">
     <div class="card">
         <div class="petal-container"></div>
         <!-- Intro Section -->
@@ -155,27 +163,22 @@ function toggleOverlay() {
             </div>
             <div class="ucapan reveal fade-bottom">
                 <div class="container">
-                    <img src="./images/ucapan-bg.png" alt="">
+                    <img src="./images/floral-4.png" alt="">
                     <div class="content">
                         <b><p>Doa untuk Pengantin</p></b>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <p>Ya Allah, berkatilah majlis perkahwinan ini, limpahkan baraqah dan rahmat kepada Muhammad
-                            Hilmi dan Nur Hafizzah,
-                            Kurniakanlah mereka
-                            zuriat yang soleh dan solehah. Kekalkanlah jodoh mereka di dunia dan di akhirat dan
-                            sempurnakanlah
-                            agama mereka dengan
-                            berkat ikatan ini.</p>
+                            Hilmi dan Nur Hafizzah,Kurniakanlah mereka zuriat yang soleh dan solehah. Kekalkanlah jodoh mereka di dunia dan di akhirat dan
+                            sempurnakanlah agama mereka dengan berkat ikatan ini.</p>
                     </div>
                 </div>
             </div>
-            <div class="ucapan reveal fade-bottom">
+            <div class="qr reveal fade-bottom">
                 <div class="container">
+                    <p class="title">Salam Kaut</p>
                     <img src="./images/qr.jpg" alt="">
-                    <div class="content">
-                        
-                    </div>
                 </div>
+            </div>
+             <div class="ucapan reveal fade-bottom">
                 <div class="beri-ucapan-button reveal fade-bottom">
                     <button id="kehadiran-btn">
                         <i class='bx bxs-check-square'></i>
@@ -192,12 +195,13 @@ function toggleOverlay() {
             <ul class="menu">
                 <li id="calendar-btn"><i class='bx bx-calendar'></i></li>
                 <li id="location-btn"><i class='bx bx-map'></i></li>
-                <li id="music-btn"><i class='bx bx-music'></i></li>
+                <li id="music-btn"><i class='bx bx-dollar-circle'></i></li>
                 <li id="rsvp-btn"><i class='bx bx-envelope'></i></li>
                 <li id="contact-btn"><i class='bx bx-phone'></i></li>
             </ul>
         </section>
     </div>
+</div>
 
     <!-- Bottom Modal -->
     <div id="calendar-menu" class="toggle-menu">
@@ -241,14 +245,14 @@ function toggleOverlay() {
 
     <div id="music-menu" class="toggle-menu">
         <div class="music">
-            <h1>Lagu</h1>
-            <p>Barbie and 12 Dancing Princess</p>
+            <h1>Salam Kaut</h1>
+            <img src="./images/qr2.jpg" alt="">
             <audio id="audio-player" controls autoplay loop>
                 <source type="audio/mp3"
                     src="./music/Barbie2.mp3">
             </audio>
+            </div>
         </div>
-    </div>
 
     <div id="rsvp-menu" class="toggle-menu">
         <div class="rsvp">
@@ -353,30 +357,7 @@ function toggleOverlay() {
     </div>
 
     <div id="ucapan-menu" class="toggle-menu">
-        <div class="ucapan-tetamu">
-            <h1>Sampaikan Ucapan</h1>
-            <form id="form-ucapan" class="form-ucapan" action="insert_message.php" method="POST">
-                <label for="name">Nama Anda</label>
-                <input type="text" name="name" placeholder="Uzumaki Naruto" required>
-
-                <label for="ucapan">Ucapan</label>
-                <textarea name="message" id="ucapan" cols="30" rows="10" placeholder="Selemat pengantin baru..."
-                    required></textarea>
-
-                <div class="button">
-                    <button type="submit" class="hantar" id="hantar">
-                        <i class='bx bxs-paper-plane'></i>
-                        <span>Hantar</span>
-                    </button>
-                    <button class="tutup">
-                        <i class='bx bx-x'></i>
-                        <span>Tutup</span>
-                    </button>
-                </div>
-            </form>
-        </div>
     </div>
-    <!-- This container will hold the success message and will be dynamically populated -->
     <div id="success-menu" class="toggle-menu"></div>
 
 
