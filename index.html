@@ -12,11 +12,12 @@
 </head>
 
 <audio id="weddingSound" type="audio/mp3" src="./music/page.mp3" preload="auto"></audio>
+    
+<!-- Let the weddingSound to be play after user click the "buka" button. -->
 <script>
 function toggleOverlay() {
   const overlay = document.getElementById('overlay');
   const audio = document.getElementById('weddingSound');
-<<<<<<< new_update_2805
 
   if (overlay.style.display === 'none' || !overlay.style.display) {
     overlay.style.display = 'flex';
@@ -25,7 +26,7 @@ function toggleOverlay() {
     overlay.style.display = 'none';
     audio.pause();
     audio.currentTime = 0; // Reset
-=======
+
   const mainContent = document.getElementById('mainContent');
 
   // Only trigger on first click
@@ -34,15 +35,10 @@ function toggleOverlay() {
 
     // Fade out overlay (optional)
     overlay.style.opacity = '0';
->>>>>>> main
+
   }
 }
 </script>
-
-<<<<<<< new_update_2805
-=======
-
->>>>>>> main
 <body>
     <div class="wrapper">
         <div id="overlay" class="overlay">
@@ -174,7 +170,6 @@ function toggleOverlay() {
                     <img src="./images/floral-4.png" alt="">
                     <div class="content">
                         <b><p>Doa untuk Pengantin</p></b>
-<<<<<<< new_update_2805
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <p>Ya Allah, berkatilah majlis perkahwinan ini, limpahkan baraqah dan rahmat kepada Muhammad
                             Hilmi dan Nur Hafizzah,
@@ -190,8 +185,6 @@ function toggleOverlay() {
                 <div class="container">
                     <img src="./images/qr.jpg" alt="">
                     <div class="content">
-                        
-=======
                         <p>Ya Allah, berkatilah majlis perkahwinan ini, limpahkan baraqah dan rahmat kepada Muhammad
                             Hilmi dan Nur Hafizzah,Kurniakanlah mereka zuriat yang soleh dan solehah. Kekalkanlah jodoh mereka di dunia dan di akhirat dan
                             sempurnakanlah agama mereka dengan berkat ikatan ini.</p>
@@ -204,7 +197,6 @@ function toggleOverlay() {
                     <p class="title">aturcara majlis</p>
                     </div>
                     <img src="./images/qr.jpg" alt="">
->>>>>>> main
                     </div>
             </div>
              <div class="ucapan reveal fade-bottom">
@@ -270,13 +262,10 @@ function toggleOverlay() {
 
     <div id="music-menu" class="toggle-menu">
         <div class="music">
-<<<<<<< new_update_2805
             <h1>Lagu</h1>
             <p>Barbie and 12 Dancing Princess</p>
-=======
             <h1>Salam Kaut</h1>
             <img src="./images/qr2.jpg" alt="">
->>>>>>> main
             <audio id="audio-player" controls autoplay loop>
                 <source type="audio/mp3"
                     src="./music/Barbie2.mp3">
